@@ -65,7 +65,7 @@ function upperFirst(str) {
     Word = words[i].split("")[0].toUpperCase() + words[i].slice(1) 
     phrase.push(Word)
 }
-return phrase.join(" ")
+return phrase.join(" ") // usare "join" ti fa risparmiare lo spazio finale (join unisce le diverse parti di un array tutto insieme)
 }
 
 console.log(upperFirst("ciao come stai"))
@@ -81,7 +81,7 @@ function giveMeRandom(n) {
 
     random = []
     for (i = 0; i < n; i++) {
-        nrandom = Math.floor(Math.random() * 11)
+        nrandom = Math.round(Math.random() * 10) //.round approssima per eccesso se > 0.5 o difetto se < 0.5 .floor approssima SEMPRE x difetto .ceil SEMPRE in eccesso 
         random.push(nrandom)
     }
 
@@ -89,7 +89,7 @@ function giveMeRandom(n) {
     
 }
 
-console.log(giveMeRandom(15)) 
+console.log(giveMeRandom(20)) 
 
 //EXTRA:
 /* ESERCIZIO 1
@@ -130,13 +130,14 @@ console.log(crazyDiff(50))
 
 function codify(str) {
 
-    if (str.split(" ")[0] === "code"||(str.split(" ")[0] === "Code")) {
-
+    if (str.split(" ")[0] === "code"||(str.split(" ")[0] === "Code")) { 
+    // si puo usare .indexOf (restituisce l'indice in cui si trova una certa sottostringa)
+    // cosi str.indexOf("code")===0 -> return str
         return str
 
     } else {
 
-        return str.concat(" code")
+        return str.concat(" code") // oppure così: return str + " code"
     }
 
 }
