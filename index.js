@@ -58,14 +58,14 @@ function upperFirst(str) {
 
     let words = str.split(" ")
     let Word = ""
-    let phrase = ""
+    let phrase = []
     
 
     for (i = 0; i < words.length; i++) {
-    Word = words[i].split("")[0].toUpperCase() + words[i].slice(1) + " "   
-    phrase +=  Word 
+    Word = words[i].split("")[0].toUpperCase() + words[i].slice(1) 
+    phrase.push(Word)
 }
-return phrase
+return phrase.join(" ")
 }
 
 console.log(upperFirst("ciao come stai"))
@@ -81,7 +81,7 @@ function giveMeRandom(n) {
 
     random = []
     for (i = 0; i < n; i++) {
-        nrandom = Math.floor(Math.random() * 10)
+        nrandom = Math.floor(Math.random() * 11)
         random.push(nrandom)
     }
 
@@ -89,7 +89,7 @@ function giveMeRandom(n) {
     
 }
 
-console.log(giveMeRandom(10)) 
+console.log(giveMeRandom(15)) 
 
 //EXTRA:
 /* ESERCIZIO 1
