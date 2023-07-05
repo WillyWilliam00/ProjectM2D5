@@ -63,12 +63,9 @@ function upperFirst(str) {
 
     for (i = 0; i < words.length; i++) {
     Word = words[i].split("")[0].toUpperCase() + words[i].slice(1) + " "   
-    phrase = phrase + Word 
+    phrase +=  Word 
 }
-
 return phrase
-    
-    
 }
 
 console.log(upperFirst("ciao come stai"))
@@ -142,7 +139,6 @@ function codify(str) {
         return str.concat(" code")
     }
 
-   
 }
 
 console.log(codify("Code"))
